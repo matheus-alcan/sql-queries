@@ -1,7 +1,7 @@
 SELECT *
 FROM sandbox.sales_data  
 WHERE
-    CONVERT(DATE, record_date)  
+    CONVERT(DATE, record_date) -- Caso record_date não seja datetime, use CAST(record_date AS DATE)
     BETWEEN
     CAST(
         CASE
@@ -19,4 +19,5 @@ WHERE
         END AS DATE
 
     )
+
 
