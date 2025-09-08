@@ -14,8 +14,9 @@ WHERE
     CAST(
         CASE
             WHEN DATEPART(WEEKDAY, GETDATE()) IN (2, 3) -- Caso seja D-1 não inclua terça-feira WEEKDAY = 3
-                THEN DATEADD(DAY, -4, GETDATE()) -- Caso seja D-1 subtraia 4 dias
-            ELSE DATEADD(DAY, -2, GETDATE()) -- Caso seja D-1 subtraia 2 dias
+                THEN DATEADD(DAY, -4, GETDATE()) -- Caso seja D-1 subtraia 3 dias
+            ELSE DATEADD(DAY, -2, GETDATE()) -- Caso seja D-1 subtraia 1 dias
         END AS DATE
 
     )
+
